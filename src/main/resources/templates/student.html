@@ -6,6 +6,15 @@
     <link rel="stylesheet" th:href="@{/student.css}">
 </head>
 <body>
+<div class="navbar">
+    <div class="navbar-logo">StudLibrary</div>
+    <div class="navbar-links">
+        <a class="active" href="/">Home</a>
+        <!--        <a href="#">Logs</a>-->
+        <a href="/admin">Admin</a>
+        <!--        <a href="#">Student List</a>-->
+    </div>
+</div>
 <div class="student-entry-container">
     <h2>Student Entry/Exit</h2>
     <form action="/student/check" method="post">

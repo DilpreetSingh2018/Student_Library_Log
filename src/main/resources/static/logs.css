@@ -4,6 +4,39 @@ body {
   margin: 0;
   min-height: 100vh;
 }
+/* Add this to your CSS file or inside <style> tags */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #3b4cc0 0%, #5c7aea 100%);
+  padding: 16px 32px;
+  box-shadow: 0 2px 8px rgba(60,80,180,0.08);
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  background: #fff;
+  color: #3b4cc0;
+}
+
 .logs-container {
   max-width: 900px;
   margin: 40px auto;

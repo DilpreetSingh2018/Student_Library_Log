@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel</title>
     <link rel="stylesheet" th:href="@{/admin.css}">
 </head>
 <body>
+<!-- This should be the first thing in body -->
+<div class="navbar">
+    <div class="navbar-logo">StudLibrary</div>
+    <div class="navbar-links">
+        <a class="active" href="/">Home</a>
+        <a href="/student">Student</a>
+    </div>
+</div>
+
 <div class="admin-header">
     <h1>Admin Panel</h1>
 </div>
+
 <nav class="admin-nav">
     <a href="/admin/logs">View Logs</a>
     <a href="/admin/addStudent">Add Student</a>

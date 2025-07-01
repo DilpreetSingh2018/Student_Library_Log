@@ -1,12 +1,84 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-  min-height: 100vh;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 80px; /* Adjust based on navbar height */
+  min-height: 100vh;
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #3b4cc0 0%, #5c7aea 100%);
+  padding: 16px 32px;
+  box-shadow: 0 2px 8px rgba(60, 80, 180, 0.08);
+  z-index: 1000; /* Keeps it above other content */
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px); /* Adjust if needed */
+}
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping if needed */
+  padding: 16px 32px;
+  box-sizing: border-box; /* important to ensure proper width */
+
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0; /* prevents shrinking of links */
+}
+
+
+
+.navbar-logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  outline: none;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover,
+.navbar-links a:focus {
+  background: #fff;
+  color: #3b4cc0;
+}
+
+/* Main content centering for form */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px); /* Adjust for navbar height */
+}
+
+/* Form Styles */
 .form-container {
   background: #fff;
   border-radius: 14px;
@@ -14,20 +86,24 @@ body {
   padding: 36px 28px;
   width: 350px;
 }
+
 .form-container h2 {
   color: #3f51b5;
   margin-bottom: 24px;
   text-align: center;
 }
+
 .form-group {
   margin-bottom: 18px;
   text-align: left;
 }
+
 .form-group label {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
 }
+
 .form-group input {
   width: 100%;
   border: 1px solid #ccc;
@@ -36,10 +112,12 @@ body {
   font-size: 1rem;
   transition: border 0.2s;
 }
+
 .form-group input:focus {
   border: 1.5px solid #3f51b5;
   outline: none;
 }
+
 .submit-btn {
   width: 100%;
   background: #3f51b5;
@@ -52,6 +130,30 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
-.submit-btn:hover {
+
+.submit-btn:hover,
+.submit-btn:focus {
   background: #283593;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 10px;
+    max-width: 98vw;
+  }
+  .navbar-logo {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  .navbar-links {
+    gap: 10px;
+    width: 100%;
+  }
+  .form-container {
+    width: 98vw;
+    padding: 22px 8px;
+  }
 }

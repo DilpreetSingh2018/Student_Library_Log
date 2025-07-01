@@ -1,28 +1,86 @@
+/* General Body */
 body {
+  margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(135deg, #dbe6fd 0%, #b1c9f8 100%);
-  margin: 0;
+  padding-top: 80px; /* Room for fixed navbar */
   min-height: 100vh;
+  box-sizing: border-box;
 }
-.admin-header {
-  background: #3f51b5;
+
+/* Navbar - Fixed to Top */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #3b4cc0 0%, #5c7aea 100%);
+  padding: 16px 32px;
+  box-shadow: 0 2px 8px rgba(60,80,180,0.08);
+  border-radius: 0 0 14px 14px;
+}
+
+/* Logo */
+.navbar-logo {
   color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  background: #fff;
+  color: #3b4cc0;
+}
+
+/* Admin Panel Header */
+.admin-header {
+  background: transparent;  /* Remove background */
+  color: #3f51b5;           /* Keep the text styled */
   padding: 40px 0 20px 0;
   text-align: center;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 2px 16px rgba(63,81,181,0.07);
+  border-radius: 0;
+  box-shadow: none;         /* Remove shadow */
 }
+
+
 .admin-header h1 {
   margin: 0;
   font-size: 2.2rem;
   letter-spacing: 2px;
 }
+
+/* Navigation Buttons */
 .admin-nav {
   display: flex;
   justify-content: center;
   gap: 32px;
   margin: 60px 0;
+  flex-wrap: wrap;
 }
+
 .admin-nav a {
   background: #fff;
   color: #3f51b5;
@@ -34,7 +92,32 @@ body {
   box-shadow: 0 2px 8px rgba(63,81,181,0.10);
   transition: background 0.2s, color 0.2s;
 }
+
 .admin-nav a:hover {
   background: #3f51b5;
   color: #fff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .admin-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

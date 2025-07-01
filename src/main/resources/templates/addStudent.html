@@ -6,32 +6,45 @@
     <link rel="stylesheet" th:href="@{/addStudent.css}">
 </head>
 <body>
-<div class="form-container">
-    <h2>Add New Student</h2>
-    <form>
-        <div class="form-group">
-            <label for="uid">UID:</label>
-            <input type="text" id="uid" name="uid" required>
-        </div>
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address">
-        </div>
-        <div class="form-group">
-            <label for="mobile">Mobile:</label>
-            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}">
-        </div>
-        <button type="submit" class="submit-btn">Add Student</button>
-    </form>
+<!-- Navbar -->
+<div class="navbar">
+    <span class="navbar-logo">StudLibrary</span>
+    <nav class="navbar-links">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">Student</a>
+    </nav>
+</div>
+
+<!-- Main Content Centered -->
+<div class="main-content">
+    <div class="form-container">
+        <h2>Add New Student</h2>
+        <form>
+            <div class="form-group">
+                <label for="uid">UID:</label>
+                <input type="text" id="uid" name="uid" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}">
+            </div>
+            <button type="submit" class="submit-btn">Add Student</button>
+        </form>
+    </div>
 </div>
 </body>
+
 </html>
 
