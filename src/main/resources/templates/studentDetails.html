@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+    <link rel="stylesheet" th:href="@{/studentDetails.css}">
+</head>
+<body>
+<div class="details-container">
+    <div class="details-title">Student Details</div>
+
+    <!-- Show details if student exists -->
+    <div th:if="${student != null}">
+        <ul class="details-list">
+            <li>Name: <span th:text="${student.name}">[Name]</span></li>
+            <li>UID: <span th:text="${student.uid}">[UID]</span></li>
+            <li>Email: <span th:text="${student.email}">[Email]</span></li>
+            <li>Mobile: <span th:text="${student.mobile}">[Mobile]</span></li>
+            <li>Address: <span th:text="${student.address}">[Address]</span></li>
+        </ul>
+        <h2>
+            <p style="color: green;" th:if="${status != null}" th:text="${status}"></p>
+        </h2>
+    </div>
+
+    <!-- Show error if student is null -->
+    <div th:if="${student == null}">
+        <p style="color: red;">Student not found.</p>
+    </div>
+</div>
+
+<a href="/student" class="back-link">Back</a>
+</body>
+</html>

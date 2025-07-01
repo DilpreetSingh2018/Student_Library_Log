@@ -1,0 +1,114 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Library Logs</title>-->
+<!--    <style>-->
+<!--        table {-->
+<!--            width: 90%;-->
+<!--            margin: auto;-->
+<!--            border-collapse: collapse;-->
+<!--        }-->
+<!--        th, td {-->
+<!--            padding: 10px;-->
+<!--            border: 1px solid #aaa;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        th {-->
+<!--            background-color: #eee;-->
+<!--        }-->
+<!--        .highlight {-->
+<!--            color: red;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+<!--        h2 {-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Library Entry/Exit Logs</h2>-->
+
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>Sr. No.</th>-->
+<!--        <th>UID</th>-->
+<!--        <th>Entry Date</th>-->
+<!--        <th>Entry Time</th>-->
+<!--        <th>Exit Time</th>-->
+<!--        <th>Time Spent</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="log, iter : ${logs}">-->
+<!--        <td th:text="${iter.index + 1}"></td>-->
+<!--        <td th:text="${log.uid}"></td>-->
+<!--        <td th:text="${#temporals.format(log.entryTime, 'dd-MM-yyyy')}"></td>-->
+<!--        <td th:text="${#temporals.format(log.entryTime, 'HH:mm')}"></td>-->
+<!--        <td>-->
+<!--            <span th:if="${log.exitTime != null}"-->
+<!--                  th:text="${#temporals.format(log.exitTime, 'HH:mm')}"></span>-->
+<!--            <span th:if="${log.exitTime == null}" class="highlight">Still Inside</span>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <span th:if="${log.exitTime != null}"-->
+<!--                  th:with="duration=${T(java.time.Duration).between(log.entryTime, log.exitTime)},-->
+<!--                           hours=${duration.toHours()},-->
+<!--                           minutes=${duration.toMinutes() % 60}"-->
+<!--                  th:text="${hours} + ' hrs ' + ${minutes} + ' min'"></span>-->
+<!--            <span th:if="${log.exitTime == null}">&#45;&#45;</span>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Entry/Exit Logs</title>
+    <link rel="stylesheet" th:href="@{/logs.css}">
+</head>
+<body>
+<div class="logs-container">
+    <div class="logs-title">Library Entry/Exit Logs</div>
+    <table>
+        <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th>UID</th>
+            <th>Entry Date</th>
+            <th>Entry Time</th>
+            <th>Exit Time</th>
+            <th>Time Spent</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="log, iter : ${logs}">
+                    <td th:text="${iter.index + 1}"></td>
+                    <td th:text="${log.uid}"></td>
+                    <td th:text="${#temporals.format(log.entryTime, 'dd-MM-yyyy')}"></td>
+                    <td th:text="${#temporals.format(log.entryTime, 'HH:mm')}"></td>
+                    <td>
+                        <span th:if="${log.exitTime != null}"
+                              th:text="${#temporals.format(log.exitTime, 'HH:mm')}"></span>
+                        <span th:if="${log.exitTime == null}" class="highlight">Still Inside</span>
+                    </td>
+                    <td>
+                        <span th:if="${log.exitTime != null}"
+                              th:with="duration=${T(java.time.Duration).between(log.entryTime, log.exitTime)},
+                                       hours=${duration.toHours()},
+                                       minutes=${duration.toMinutes() % 60}"
+                              th:text="${hours} + ' hrs ' + ${minutes} + ' min'"></span>
+                        <span th:if="${log.exitTime == null}"></span>
+                    </td>
+                </tr>
+        <!-- More rows can be added dynamically -->
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

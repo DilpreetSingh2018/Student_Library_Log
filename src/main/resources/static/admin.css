@@ -1,0 +1,40 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #dbe6fd 0%, #b1c9f8 100%);
+  margin: 0;
+  min-height: 100vh;
+}
+.admin-header {
+  background: #3f51b5;
+  color: #fff;
+  padding: 40px 0 20px 0;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 2px 16px rgba(63,81,181,0.07);
+}
+.admin-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+.admin-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 60px 0;
+}
+.admin-nav a {
+  background: #fff;
+  color: #3f51b5;
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(63,81,181,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.admin-nav a:hover {
+  background: #3f51b5;
+  color: #fff;
+}

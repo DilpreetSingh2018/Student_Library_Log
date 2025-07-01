@@ -1,0 +1,39 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  margin: 0;
+  min-height: 100vh;
+}
+.logs-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(63,81,181,0.10);
+  padding: 32px 24px;
+}
+.logs-title {
+  color: #3f51b5;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #f5f7fa;
+}
+th, td {
+  border: 1px solid #d1d5db;
+  padding: 12px;
+  text-align: center;
+}
+th {
+  background: #3f51b5;
+  color: #fff;
+  font-weight: 700;
+}
+tr:nth-child(even) {
+  background: #e3e8f0;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Entry</title>
+    <link rel="stylesheet" th:href="@{/student.css}">
+</head>
+<body>
+<div class="student-entry-container">
+    <h2>Student Entry/Exit</h2>
+    <form action="/student/check" method="post">
+        <label>
+            <input type="text" name="uid" placeholder="Enter UID" required>
+        </label>
+        <button type="submit">Check</button>
+    </form>
+</div>
+
+<script th:if="${studentNotFound}">
+    /*<![CDATA[*/
+    if (confirm('Student not found. Redirecting to add student page...')) {
+        window.location.href = /*[[@{/admin/addStudent}]]*/ '/admin/addStudent';
+    }
+    /*]]>*/
+</script>
+</body>
+</html>

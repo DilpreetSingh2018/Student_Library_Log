@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" th:href="@{/allStudent.css}">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📚 Student Directory</h1>
+        <div class="student-count" th:text="'Total Students: ' + ${allStudent.size()}"></div>
+    </div>
+
+    <div class="table-container">
+        <table class="student-table" th:if="${allStudent != null and !allStudent.empty}">
+            <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr th:each="student : ${allStudent}">
+                    <td th:text="${student.uid}"></td>
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.email}"></td>
+                    <td th:text="${student.mobile}"></td>
+                    <td th:text="${student.address}"></td>
+                </tr>
+            </table>
+
+            </tbody>
+        </table>
+
+        <div class="no-students" th:if="${students == null or students.empty}">
+            <p>📝 No students found in the database.</p>
+            <p>Add some students to get started!</p>
+        </div>
+    </div>
+
+    <div class="actions">
+        <a href="/admin/addStudent" class="btn">➕ Add New Student</a>
+        <a href="/admin/logs" class="btn btn-secondary">📋 View Logs</a>
+    </div>
+</div>
+</body>
+</html>
