@@ -52,4 +52,6 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or support, please contact the project maintainer.
++91 9888042018
+Dilpreet2018singh@gmail.com
 
