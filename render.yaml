@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: springboot-app
+    env: java
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://localhost:3306/librarydb
+      - key: root
+        value: root
+      - key: Dilpreet@2018
+        value: Dilpreet@2018
